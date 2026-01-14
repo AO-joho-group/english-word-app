@@ -5,18 +5,18 @@ body {
   padding: 20px;
 }
 
-/* 英単語 */
+/* 英単語（主役） */
 #question {
-  font-size: 8vw;
-  max-font-size: 80px;
-  margin: 30px 0 25px;
+  font-size: min(10vw, 96px); /* より大きく */
+  margin: 20px 0 20px;
+  line-height: 1.2;
 }
 
 /* 選択肢レイアウト */
 .choices-column {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 14px;                 /* 詰める */
   width: 90%;
   max-width: 600px;
   margin: 0 auto 20px;
@@ -24,23 +24,28 @@ body {
 
 /* 選択肢ボタン */
 .choice {
-  font-size: 5vw;
-  padding: 20px;
+  font-size: min(4.5vw, 32px); /* 少し下げる */
+  padding: 16px;
   border: 2px solid #2a4d9b;
   border-radius: 12px;
   background-color: #fff;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .choice:hover {
   background-color: #f0f0f0;
 }
 
-/* 判定 */
+/* 判定（高さを固定してレイアウトを安定させる） */
 #result {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 20px;
+  min-height: 1.5em;   /* ← 重要 */
 }
 
 /* ボタン共通 */
@@ -52,10 +57,17 @@ button {
 
 /* スマホ最適化 */
 @media (max-width: 480px) {
+  #question {
+    font-size: 40px;
+  }
+
   .choices-column {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
+
   .choice {
-    font-size: 20px;
+    font-size: 22px;
+    padding: 14px;
   }
 }
