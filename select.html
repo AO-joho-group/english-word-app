@@ -1,73 +1,28 @@
-body {
-  font-family: sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>英→日（選択式）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* 英単語（主役） */
-#question {
-  font-size: min(10vw, 96px); /* より大きく */
-  margin: 20px 0 20px;
-  line-height: 1.2;
-}
+  <link rel="stylesheet" href="select.css">
+</head>
+<body>
 
-/* 選択肢レイアウト */
-.choices-column {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;                 /* 詰める */
-  width: 90%;
-  max-width: 600px;
-  margin: 0 auto 20px;
-}
+  <h1>英→日（選択式）</h1>
 
-/* 選択肢ボタン */
-.choice {
-  font-size: min(4.5vw, 32px); /* 少し下げる */
-  padding: 16px;
-  border: 2px solid #2a4d9b;
-  border-radius: 12px;
-  background-color: #fff;
-  cursor: pointer;
+  <!-- 英単語 -->
+  <div id="question">loading...</div>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  <!-- 選択肢 -->
+  <div id="choices" class="choices-column"></div>
 
-.choice:hover {
-  background-color: #f0f0f0;
-}
+  <!-- 正誤表示 -->
+  <div id="result"></div>
 
-/* 判定（高さを固定してレイアウトを安定させる） */
-#result {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  min-height: 1.5em;   /* ← 重要 */
-}
+  <!-- 次へ -->
+  <button id="nextBtn">次の問題</button>
 
-/* ボタン共通 */
-button {
-  font-size: 18px;
-  padding: 12px 20px;
-  margin: 10px;
-}
-
-/* スマホ最適化 */
-@media (max-width: 480px) {
-  #question {
-    font-size: 40px;
-  }
-
-  .choices-column {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .choice {
-    font-size: 22px;
-    padding: 14px;
-  }
-}
+  <script src="select.js"></script>
+</body>
+</html>
