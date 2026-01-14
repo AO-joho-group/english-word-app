@@ -1,3 +1,12 @@
+const home = document.getElementById("home");
+const study = document.getElementById("study");
+
 document.getElementById("startBtn").onclick = () => {
-  alert("ここから学習画面に進む予定");
+  home.style.display = "none";
+  study.style.display = "block";
+};
+
+document.getElementById("backBtn").onclick = () => {
+  study.style.display = "none";
+  home.style.display = "block";
 };
