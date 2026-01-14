@@ -1,73 +1,77 @@
 body {
-  font-family: sans-serif;
-  text-align: center;
+  font-family: system-ui, sans-serif;
+  background: #f6f7f9;
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 
-/* 英単語（主役） */
+/* 全体コンテナ */
+body > * {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* タイトル */
+h1 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #666;
+  margin: 16px 0 8px;
+}
+
+/* 英単語カード */
 #question {
-  font-size: min(10vw, 96px);
-  margin: 20px 0;
-  line-height: 1.2;
+  background: #ffffff;
+  font-size: 48px;
+  font-weight: bold;
+  padding: 28px 16px;
+  margin: 12px 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* 選択肢レイアウト */
+/* 選択肢 */
 .choices-column {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  width: 90%;
-  max-width: 600px;
-  margin: 0 auto 20px;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 0 16px;
+  margin-bottom: 16px;
 }
 
-/* 選択肢ボタン */
 .choice {
-  font-size: min(4.5vw, 32px);
+  font-size: 20px;
   padding: 16px;
-  border: 2px solid #2a4d9b;
   border-radius: 12px;
-  background-color: #fff;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.choice:hover {
-  background-color: #f0f0f0;
+.choice:active {
+  transform: scale(0.98);
 }
 
-/* 正誤表示（高さ固定） */
+/* 正誤表示 */
 #result {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 20px;
   min-height: 1.5em;
-}
-
-/* ボタン共通 */
-button {
   font-size: 18px;
-  padding: 12px 20px;
-  margin: 10px;
+  font-weight: bold;
+  margin: 8px 0 12px;
 }
 
-/* スマホ対応 */
-@media (max-width: 480px) {
-  #question {
-    font-size: 40px;
-  }
-
-  .choices-column {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .choice {
-    font-size: 22px;
-    padding: 14px;
-  }
+/* 次へボタン */
+#nextBtn {
+  width: calc(100% - 32px);
+  max-width: 400px;
+  margin: 0 auto 24px;
+  font-size: 18px;
+  padding: 14px;
+  border-radius: 24px;
+  border: none;
+  background: #2a4d9b;
+  color: #fff;
 }
