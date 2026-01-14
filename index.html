@@ -3,11 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>英単語学習</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>英単語学習アプリ</h1>
-  <button id="startBtn">学習開始</button>
+
+  <!-- ホーム画面 -->
+  <div id="home">
+    <h1>英単語学習アプリ</h1>
+    <button id="startBtn">英→日（選択）</button>
+  </div>
+
+  <!-- 学習画面 -->
+  <div id="study" style="display:none;">
+    <h2 id="question">abandon</h2>
+
+    <div id="choices">
+      <button class="choice">放棄する</button>
+      <button class="choice">集める</button>
+      <button class="choice">防ぐ</button>
+      <button class="choice">増やす</button>
+    </div>
+
+    <p id="result"></p>
+    <button id="backBtn">ホームに戻る</button>
+  </div>
 
   <script src="main.js"></script>
 </body>
